@@ -181,7 +181,6 @@ img {
 }
 
 /* --- RESPONSIVE MOBILE SETTINGS --- */
-/* --- RESPONSIVE MOBILE SETTINGS --- */
 @media (max-width: 600px) {
     * {
         box-sizing: border-box; /* Memastikan padding tidak menambah lebar elemen */
