@@ -93,12 +93,14 @@ h1, h2, h3 {
     margin-bottom: 20px;
 }
 
-/* Grid khusus skill & hobi */
+/* Grid utama agar 3 kolom sama rata */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    /* Dibagi 3 kolom sama besar (33.3% masing-masing) */
+    grid-template-columns: repeat(3, 1fr); 
     gap: 15px;
     margin-top: 20px;
+    align-items: stretch; /* Membuat tinggi kotak sama jika isinya berbeda */
 }
 
 .icon-box {
@@ -183,46 +185,37 @@ img {
 /* --- RESPONSIVE MOBILE SETTINGS --- */
 @media (max-width: 600px) {
     * {
-        box-sizing: border-box; /* Memastikan padding tidak menambah lebar elemen */
+        box-sizing: border-box;
     }
 
     .container {
         margin-top: 80px; 
         padding: 0 15px;
         width: 100%;
-        overflow-x: hidden; /* Tambahan agar container tidak meluber */
+        overflow-x: hidden;
     }
 
-    /* Memperbaiki Grid Ikon/Box yang error di screenshot */
+    /* Paksa grid menjadi 1 kolom agar semua box lebarnya 100% layar HP */
     .grid-container {
-        grid-template-columns: 1fr !important; /* Paksa jadi 1 kolom agar tidak sempit */
+        grid-template-columns: 1fr !important; 
         gap: 12px;
     }
 
-    /* Memperbaiki Galeri Dokumentasi di Experience */
-    .doc-grid {
-        grid-template-columns: repeat(2, 1fr) !important; /* Maksimal 2 kolom di HP */
-        gap: 8px;
-    }
-
-    /* Menghapus paksaan lebar dari inline style HTML */
+    /* Pastikan tidak ada box yang mencoba mengambil 2 kolom (span 2) */
     .icon-box {
         grid-column: span 1 !important; 
         width: 100% !important;
-        text-align: left; /* Opsional: lebih rapi di HP kalau rata kiri */
     }
-
-    .report-grid {
-        grid-template-columns: repeat(2, 1fr); 
+    
+    /* Agar tombol di dalam box tidak berantakan di layar sempit */
+    .btn-group {
+        display: flex;
+        flex-direction: column; 
+        width: 100%;
     }
-
-    .hero h1 {
-        font-size: 1.8rem;
-    }
-
-    .navbar ul {
-        justify-content: flex-start;
-        padding-left: 20px;
-        padding-right: 20px;
+    
+    .btn-group .btn {
+        width: 100%;
+        text-align: center;
     }
 }
