@@ -96,24 +96,23 @@ h1, h2, h3 {
 /* Grid utama agar 3 kolom sama rata */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Paksa 2 kolom di HP & Desktop */
-    gap: 15px;
-    margin-top: 20px;
+    grid-template-columns: repeat(4, 1fr); /* 4 kolom ke samping */
+    gap: 12px;
+    margin-top: 15px;
 }
 
 .icon-box {
     background: #f9f9fb;
-    padding: 20px;
-    border-radius: var(--radius);
+    padding: 15px 5px; /* Padding lebih ramping */
+    border-radius: 20px; /* Radius sedikit lebih kecil agar pas */
     text-align: center;
     transition: transform 0.2s;
-    
-    /* Membuat box persegi sempurna */
     aspect-ratio: 1 / 1; 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border: 1px solid #efeff4;
 }
 
 .icon-box:hover {
@@ -121,10 +120,16 @@ h1, h2, h3 {
 }
 
 .icon-box img {
-    width: 45px;
-    height: 45px;
-    margin-bottom: 12px;
+    width: 32px; /* Ukuran ikon diperkecil agar hemat tempat */
+    height: 32px;
+    margin-bottom: 8px;
     object-fit: contain;
+}
+
+.icon-box p {
+    font-size: 0.8rem; /* Font diperkecil */
+    margin: 0;
+    font-weight: 600;
 }
 
 /* Buat tombol */
@@ -194,34 +199,53 @@ img {
         box-sizing: border-box;
     }
 
+    /* 1. Perbaikan Navbar & Tombol Home */
+    .navbar {
+        padding: 5px 0; /* Perkecil tinggi navbar di HP */
+    }
+
+    .navbar ul {
+        justify-content: flex-start; 
+        padding: 10px 20px; /* Beri ruang di kiri agar 'Home' tidak mepet */
+        gap: 10px;
+        overflow-x: auto; 
+        display: flex;
+        flex-wrap: nowrap; /* Paksa satu baris agar bisa di-scroll ke samping */
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .navbar li {
+        flex: 0 0 auto; 
+    }
+
     .container {
-        margin-top: 80px; 
-        padding: 0 15px;
-        width: 100%;
-        overflow-x: hidden;
+        padding: 90px 15px 20px; /* Padding atas ditambah agar konten tidak tertutup */
     }
 
-    /* Paksa grid menjadi 1 kolom agar semua box lebarnya 100% layar HP */
+    /* 2. Grid 4 Ke Samping (Skills & Hobbies) */
     .grid-container {
-        grid-template-columns: 1fr !important; 
-        gap: 12px;
+        grid-template-columns: repeat(4, 1fr) !important; /* Paksa 4 kolom */
+        gap: 8px; /* Gap lebih kecil di HP */
     }
 
-    /* Pastikan tidak ada box yang mencoba mengambil 2 kolom (span 2) */
     .icon-box {
         grid-column: span 1 !important; 
-        width: 100% !important;
+        padding: 10px 5px !important; /* Padding lebih irit */
     }
-    
-    /* Agar tombol di dalam box tidak berantakan di layar sempit */
+
+    .icon-box img {
+        width: 28px !important; /* Perkecil ikon di HP */
+        height: 28px !important;
+    }
+
+    .icon-box p {
+        font-size: 0.7rem !important; /* Perkecil teks di HP */
+    }
+
+    /* 3. Perbaikan Tombol Experience (tetap lebar) */
     .btn-group {
         display: flex;
         flex-direction: column; 
-        width: 100%;
-    }
-    
-    .btn-group .btn {
-        width: 100%;
-        text-align: center;
+        gap: 5px;
     }
 }
