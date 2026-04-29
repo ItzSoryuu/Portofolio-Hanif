@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Experience - Portofolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -78,8 +78,20 @@
             cursor: pointer;
         }
 
+        /* Penyesuaian Responsif Khusus Halaman Ini */
         @media (max-width: 600px) {
-            .doc-grid { grid-template-columns: repeat(2, 1fr); }
+            .doc-grid { 
+                grid-template-columns: repeat(2, 1fr); 
+            }
+            
+            /* Menghilangkan paksaan span 2 agar tidak meluber di HP */
+            .experience-grid {
+                grid-template-columns: 1fr !important;
+            }
+            
+            .wide-card {
+                grid-column: span 1 !important;
+            }
         }
     </style>
     <meta name="theme-color" content="#f2f2f7">
@@ -118,7 +130,7 @@
 
             <div class="poster-large">
                 <p style="font-weight: 600; margin-bottom: 10px;">Poster Project</p>
-                <img src="poster-propil.jpeg" alt="Poster Besar PROPIL">
+                <img src="poster-propil.jpeg" alt="Poster Besar PROPIL" onclick="openLightbox(this.src)" style="cursor: pointer;">
             </div>
         </div>
 
@@ -126,13 +138,13 @@
             <h3 style="margin-bottom: 15px;"><i class="fab fa-google-drive"></i> Google Drive</h3>
             <div class="btn-group">
                 <a href="https://drive.google.com/file/d/1jnzPrMYIN_SyXHaO79NxSZP1aoWGSxkS/view?usp=drive_link" target="_blank" class="btn">
-                    <i class="fas fa-file-alt"></i> File Laporan PROPIL
+                    <i class="fas fa-file-alt"></i> Laporan PROPIL
                 </a>
                 <a href="https://drive.google.com/drive/folders/1aDqtJTmRjxssioMn3u_ZqOc1UvMlHdHw?usp=drive_link" target="_blank" class="btn btn-secondary">
-                    <i class="fas fa-code"></i> Coding TIK
+                    <i class="fas fa-code"></i> TIK
                 </a>
                 <a href="https://drive.google.com/drive/folders/1RXEFt9d9ZczOeVbFxFgVAZJ-LyoQiEgV?usp=drive_link" target="_blank" class="btn btn-secondary">
-                    <i class="fas fa-laptop-code"></i> Coding Ekskul
+                    <i class="fas fa-laptop-code"></i> Ekskul
                 </a>
             </div>
         </div>
@@ -140,7 +152,7 @@
         <div class="card">
             <h2>Organisasi & Kepanitiaan</h2>
             
-            <div class="grid-container" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+            <div class="grid-container experience-grid">
                 <div class="icon-box" style="text-align: left;">
                     <h4 style="color: var(--one-ui-primary);"><i class="fas fa-users"></i> Organisasi</h4>
                     <ul class="custom-list" style="margin-top: 10px;">
@@ -152,20 +164,20 @@
                 <div class="icon-box" style="text-align: left;">
                     <h4 style="color: #5856d6;"><i class="fas fa-clipboard-list"></i> Kepanitiaan OSIS</h4>
                     <div class="btn-group" style="margin-top: 10px;">
-                        <span class="btn btn-secondary" style="font-size: 0.8rem; padding: 5px 12px;">Acara Lentscape 8.0</span>
-                        <span class="btn btn-secondary" style="font-size: 0.8rem; padding: 5px 12px;">Perkap Bedah Sekre</span>
-                        <span class="btn btn-secondary" style="font-size: 0.8rem; padding: 5px 12px;">Acara Language Awards 2</span>
-                        <span class="btn btn-secondary" style="font-size: 0.8rem; padding: 5px 12px;">Sekretaris Language Awards 3</span>
-                        <span class="btn btn-secondary" style="font-size: 0.8rem; padding: 5px 12px;">IT MPLS OSIS 2025</span>
-                        <span class="btn btn-secondary" style="font-size: 0.8rem; padding: 5px 12px;">Acara Semersa 2025</span>
+                        <span class="btn btn-secondary" style="font-size: 0.75rem; padding: 4px 10px;">Lentscape 8.0</span>
+                        <span class="btn btn-secondary" style="font-size: 0.75rem; padding: 4px 10px;">Bedah Sekre</span>
+                        <span class="btn btn-secondary" style="font-size: 0.75rem; padding: 4px 10px;">Language Awards 2</span>
+                        <span class="btn btn-secondary" style="font-size: 0.75rem; padding: 4px 10px;">Sekertaris LA 3</span>
+                        <span class="btn btn-secondary" style="font-size: 0.75rem; padding: 4px 10px;">IT MPLS 2025</span>
+                        <span class="btn btn-secondary" style="font-size: 0.75rem; padding: 4px 10px;">Semersa 2025</span>
                     </div>
                 </div>
 
-                <div class="icon-box" style="text-align: left; grid-column: span 2;">
+                <div class="icon-box wide-card" style="text-align: left; grid-column: span 2;">
                     <h4 style="color: #ff9500;"><i class="fas fa-book"></i> Kepanitiaan Pusmud</h4>
                     <div class="btn-group" style="margin-top: 10px;">
-                        <span class="btn btn-secondary" style="font-size: 0.8rem; padding: 5px 12px;">PJ Acara Pusmud Grow Series 1.0</span>
-                        <span class="btn btn-secondary" style="font-size: 0.8rem; padding: 5px 12px;">Acara Akar Kata 4.0</span>
+                        <span class="btn btn-secondary" style="font-size: 0.75rem; padding: 4px 10px;">PJ Grow Series 1.0</span>
+                        <span class="btn btn-secondary" style="font-size: 0.75rem; padding: 4px 10px;">Akar Kata 4.0</span>
                     </div>
                 </div>
             </div>
@@ -177,6 +189,20 @@
         &copy; 2026 Portofolio Hanif Baihaqi Abdurrahman
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        function openLightbox(src) {
+            const lb = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            lb.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lb = document.getElementById('lightbox');
+            lb.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    </script>
 </body>
 </html>

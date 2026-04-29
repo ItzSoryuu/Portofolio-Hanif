@@ -181,22 +181,48 @@ img {
 }
 
 /* --- RESPONSIVE MOBILE SETTINGS --- */
+/* --- RESPONSIVE MOBILE SETTINGS --- */
 @media (max-width: 600px) {
+    * {
+        box-sizing: border-box; /* Memastikan padding tidak menambah lebar elemen */
+    }
+
     .container {
-        margin-top: 80px; /* Lebih naik dikit di HP */
-        padding: 0 15px; /* Biar card tidak nempel ke pinggir layar HP */
+        margin-top: 80px; 
+        padding: 0 15px;
+        width: 100%;
+        overflow-x: hidden; /* Tambahan agar container tidak meluber */
+    }
+
+    /* Memperbaiki Grid Ikon/Box yang error di screenshot */
+    .grid-container {
+        grid-template-columns: 1fr !important; /* Paksa jadi 1 kolom agar tidak sempit */
+        gap: 12px;
+    }
+
+    /* Memperbaiki Galeri Dokumentasi di Experience */
+    .doc-grid {
+        grid-template-columns: repeat(2, 1fr) !important; /* Maksimal 2 kolom di HP */
+        gap: 8px;
+    }
+
+    /* Menghapus paksaan lebar dari inline style HTML */
+    .icon-box {
+        grid-column: span 1 !important; 
+        width: 100% !important;
+        text-align: left; /* Opsional: lebih rapi di HP kalau rata kiri */
     }
 
     .report-grid {
-        grid-template-columns: repeat(2, 1fr); /* Di HP, rapot berjejer ke bawah saja biar jelas */
+        grid-template-columns: repeat(2, 1fr); 
     }
 
     .hero h1 {
-        font-size: 1.8rem; /* Perkecil font judul di HP agar tidak pecah baris */
+        font-size: 1.8rem;
     }
 
     .navbar ul {
-        justify-content: flex-start; /* Di HP harus start supaya bisa di-scroll ke kanan */
+        justify-content: flex-start;
         padding-left: 20px;
         padding-right: 20px;
     }
