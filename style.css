@@ -199,53 +199,60 @@ img {
         box-sizing: border-box;
     }
 
-    /* 1. Perbaikan Navbar & Tombol Home */
-    .navbar {
-        padding: 5px 0; /* Perkecil tinggi navbar di HP */
-    }
-
+    /* 1. Navbar & Home Fix */
     .navbar ul {
         justify-content: flex-start; 
-        padding: 10px 20px; /* Beri ruang di kiri agar 'Home' tidak mepet */
-        gap: 10px;
+        padding: 10px 25px; /* Tambah padding kiri agar tombol Home aman */
+        gap: 12px;
         overflow-x: auto; 
         display: flex;
-        flex-wrap: nowrap; /* Paksa satu baris agar bisa di-scroll ke samping */
-        -webkit-overflow-scrolling: touch;
+        flex-wrap: nowrap;
     }
 
-    .navbar li {
-        flex: 0 0 auto; 
-    }
-
+    /* 2. Container Centralization */
     .container {
-        padding: 90px 15px 20px; /* Padding atas ditambah agar konten tidak tertutup */
+        padding: 100px 20px 20px; /* Padding samping 20px agar tidak nempel pinggir layar */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Memastikan kartu ada di tengah */
     }
 
-    /* 2. Grid 4 Ke Samping (Skills & Hobbies) */
+    .card {
+        width: 100%; /* Kartu memenuhi lebar container yang sudah diberi padding */
+    }
+
+    /* 3. Grid Skills & Hobbies (Tetap 4 ke samping) */
     .grid-container {
-        grid-template-columns: repeat(4, 1fr) !important; /* Paksa 4 kolom */
-        gap: 8px; /* Gap lebih kecil di HP */
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 8px;
+        width: 100%;
+    }
+
+    /* 4. Social Media Fix (Agar tidak dempet ke kiri) */
+    /* Menggunakan selektor khusus untuk grid yang isinya link sosial media */
+    .card .grid-container:has(a), 
+    .card .grid-container:last-of-type {
+        grid-template-columns: repeat(2, 1fr) !important; /* Sosial media jadi 2x2 agar teks terbaca */
+        gap: 12px;
     }
 
     .icon-box {
         grid-column: span 1 !important; 
-        padding: 10px 5px !important; /* Padding lebih irit */
+        padding: 15px 5px !important;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Konten di dalam box tetap di tengah */
+        justify-content: center;
     }
 
     .icon-box img {
-        width: 28px !important; /* Perkecil ikon di HP */
-        height: 28px !important;
+        width: 30px !important;
+        height: 30px !important;
     }
 
     .icon-box p {
-        font-size: 0.7rem !important; /* Perkecil teks di HP */
-    }
-
-    /* 3. Perbaikan Tombol Experience (tetap lebar) */
-    .btn-group {
-        display: flex;
-        flex-direction: column; 
-        gap: 5px;
+        font-size: 0.75rem !important;
+        text-align: center;
     }
 }
