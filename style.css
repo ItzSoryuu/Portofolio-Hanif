@@ -93,26 +93,20 @@ h1, h2, h3 {
     margin-bottom: 20px;
 }
 
-/* Grid utama agar 3 kolom sama rata */
+/* Grid khusus skill & hobi */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 kolom ke samping */
-    gap: 12px;
-    margin-top: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
 }
 
 .icon-box {
     background: #f9f9fb;
-    padding: 15px 5px; /* Padding lebih ramping */
-    border-radius: 20px; /* Radius sedikit lebih kecil agar pas */
+    padding: 20px;
+    border-radius: var(--radius);
     text-align: center;
     transition: transform 0.2s;
-    aspect-ratio: 1 / 1; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #efeff4;
 }
 
 .icon-box:hover {
@@ -120,16 +114,9 @@ h1, h2, h3 {
 }
 
 .icon-box img {
-    width: 32px; /* Ukuran ikon diperkecil agar hemat tempat */
-    height: 32px;
-    margin-bottom: 8px;
-    object-fit: contain;
-}
-
-.icon-box p {
-    font-size: 0.8rem; /* Font diperkecil */
-    margin: 0;
-    font-weight: 600;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
 }
 
 /* Buat tombol */
@@ -196,63 +183,46 @@ img {
 /* --- RESPONSIVE MOBILE SETTINGS --- */
 @media (max-width: 600px) {
     * {
-        box-sizing: border-box;
+        box-sizing: border-box; /* Memastikan padding tidak menambah lebar elemen */
     }
 
-    /* 1. Navbar & Home Fix */
-    .navbar ul {
-        justify-content: flex-start; 
-        padding: 10px 25px; /* Tambah padding kiri agar tombol Home aman */
-        gap: 12px;
-        overflow-x: auto; 
-        display: flex;
-        flex-wrap: nowrap;
-    }
-
-    /* 2. Container Centralization */
     .container {
-        padding: 100px 20px 20px; /* Padding samping 20px agar tidak nempel pinggir layar */
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Memastikan kartu ada di tengah */
-    }
-
-    .card {
-        width: 100%; /* Kartu memenuhi lebar container yang sudah diberi padding */
-    }
-
-    /* 3. Grid Skills & Hobbies (Tetap 4 ke samping) */
-    .grid-container {
-        grid-template-columns: repeat(4, 1fr) !important;
-        gap: 8px;
+        margin-top: 80px; 
+        padding: 0 15px;
         width: 100%;
+        overflow-x: hidden; /* Tambahan agar container tidak meluber */
     }
 
-    /* 4. Social Media Fix (Agar tidak dempet ke kiri) */
-    /* Menggunakan selektor khusus untuk grid yang isinya link sosial media */
-    .card .grid-container:has(a), 
-    .card .grid-container:last-of-type {
-        grid-template-columns: repeat(2, 1fr) !important; /* Sosial media jadi 2x2 agar teks terbaca */
+    /* Memperbaiki Grid Ikon/Box yang error di screenshot */
+    .grid-container {
+        grid-template-columns: 1fr !important; /* Paksa jadi 1 kolom agar tidak sempit */
         gap: 12px;
     }
 
+    /* Memperbaiki Galeri Dokumentasi di Experience */
+    .doc-grid {
+        grid-template-columns: repeat(2, 1fr) !important; /* Maksimal 2 kolom di HP */
+        gap: 8px;
+    }
+
+    /* Menghapus paksaan lebar dari inline style HTML */
     .icon-box {
         grid-column: span 1 !important; 
-        padding: 15px 5px !important;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Konten di dalam box tetap di tengah */
-        justify-content: center;
+        width: 100% !important;
+        text-align: left; /* Opsional: lebih rapi di HP kalau rata kiri */
     }
 
-    .icon-box img {
-        width: 30px !important;
-        height: 30px !important;
+    .report-grid {
+        grid-template-columns: repeat(2, 1fr); 
     }
 
-    .icon-box p {
-        font-size: 0.75rem !important;
-        text-align: center;
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .navbar ul {
+        justify-content: flex-start;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }
