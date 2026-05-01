@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Experience - Portofolio</title>
+    <title>Experiences - Portofolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -21,15 +21,22 @@
             border-radius: 18px;
             background: #eee;
             cursor: pointer;
-            transition: transform 0.2s;
+            transition: transform 0.2s, box-shadow 0.15s ease-in-out;
         }
         .doc-item img:hover {
             transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(3, 115, 243, 0.3);
         }
         .poster-large img {
-            width: 100%;
-            border-radius: 24px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            width: 100%;  /* Set fixed width */
+            height: 400px; /* Set fixed height */
+            object-fit: cover; /* Crop to fit without stretching */
+            object-position: top; /* Center the crop (default) */
+            border: 1px solid #e5e5ea;
+            transition: box-shadow 0.15s ease-in-out;
+        }
+        .poster-large img:hover {
+            box-shadow: 0 6px 16px rgba(3, 115, 243, 0.3);
         }
         .badge-title {
             display: inline-block;
@@ -110,9 +117,11 @@
         </ul>
     </nav>
 
-    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-        <span class="close-zoom">&times;</span>
+    <div class="lightbox" id="lightbox">
+        <span class="close-zoom" onclick="closeLightbox()">&times;</span>
         <img id="lightbox-img" src="" alt="Zoomed Content">
+        <div id="zoom-badge" style="position:absolute;bottom:24px;right:24px;background:rgba(0,0,0,0.55);color:#fff;padding:5px 14px;border-radius:20px;font-size:0.85rem;font-weight:600;opacity:0;transition:opacity 0.2s;pointer-events:none;">100%</div>
+        <div id="zoom-hint" style="position:absolute;bottom:24px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.55);color:#fff;padding:6px 16px;border-radius:20px;font-size:0.8rem;opacity:0;transition:opacity 0.4s;pointer-events:none;white-space:nowrap;">Scroll untuk zoom | Klik 2x untuk zoom in</div>
     </div>
 
     <div class="container">
@@ -128,7 +137,7 @@
             </div>
 
             <div class="poster-large">
-                <p style="font-weight: 600; margin-bottom: 10px;">Poster Project</p>
+                <p style="font-weight: 600; margin-bottom: 10px;">Poster Project (Zoom Untuk Selengkapnya)</p>
                 <img src="poster-propil.jpeg" alt="Poster Besar PROPIL" onclick="openLightbox(this.src)" style="cursor: pointer;">
             </div>
         </div>
@@ -151,7 +160,7 @@
         <div class="card">
             <h2>Organisasi & Kepanitiaan</h2>
             
-            <div class="grid-container experience-grid">
+            <div class="grid-container experience-grid" style="grid-template-columns: repeat(3, 1fr);">
                 <div class="icon-box" style="text-align: left;">
                     <h4 style="color: var(--one-ui-primary);"><i class="fas fa-users"></i> Organisasi</h4>
                     <ul class="custom-list" style="margin-top: 10px;">
@@ -163,20 +172,20 @@
                 <div class="icon-box" style="text-align: left;">
                     <h4 style="color: #5856d6;"><i class="fas fa-clipboard-list"></i> Kepanitiaan OSIS</h4>
                     <div class="btn-group" style="margin-top: 10px;">
-                        <span class="btn btn-secondary" style="font-size: 0.75rem; padding: 4px 10px;">Tim Acara Lentscape 8.0</span>
-                        <span class="btn btn-secondary" style="font-size: 0.75rem; padding: 4px 10px;">Tim Perkap Bedah Sekre</span>
-                        <span class="btn btn-secondary" style="font-size: 0.75rem; padding: 4px 10px;">Tim Acara Language Awards 2</span>
-                        <span class="btn btn-secondary" style="font-size: 0.75rem; padding: 4px 10px;">Sekretaris Language Awards 3</span>
-                        <span class="btn btn-secondary" style="font-size: 0.75rem; padding: 4px 10px;">Tim IT MPLS 2025</span>
-                        <span class="btn btn-secondary" style="font-size: 0.75rem; padding: 4px 10px;">Tim Acara Semersa 2025</span>
+                        <span class="btn btn-secondary" style="font-size: 0.75rem; padding: 4px 10px; pointer-events: none;">Tim Acara Lentscape 8.0</span>
+                        <span class="btn btn-secondary" style="font-size: 0.75rem; padding: 4px 10px; pointer-events: none;">Tim Perkap Bedah Sekre</span>
+                        <span class="btn btn-secondary" style="font-size: 0.75rem; padding: 4px 10px; pointer-events: none;">Tim Acara Language Awards 2</span>
+                        <span class="btn btn-secondary" style="font-size: 0.75rem; padding: 4px 10px; pointer-events: none;">Sekretaris Language Awards 3</span>
+                        <span class="btn btn-secondary" style="font-size: 0.75rem; padding: 4px 10px; pointer-events: none;">Tim IT MPLS 2025</span>
+                        <span class="btn btn-secondary" style="font-size: 0.75rem; padding: 4px 10px; pointer-events: none;">Tim Acara Semersa 2025</span>
                     </div>
                 </div>
 
-                <div class="icon-box wide-card" style="text-align: left; grid-column: span 2;">
+                <div class="icon-box wide-card" style="text-align: left;">
                     <h4 style="color: #ff9500;"><i class="fas fa-book"></i> Kepanitiaan Pusmud</h4>
                     <div class="btn-group" style="margin-top: 10px;">
-                        <span class="btn btn-secondary" style="font-size: 0.75rem; padding: 4px 10px;">PJ Acara Grow Series 1.0</span>
-                        <span class="btn btn-secondary" style="font-size: 0.75rem; padding: 4px 10px;">Tim Acara Akar Kata 4.0</span>
+                        <span class="btn btn-secondary" style="font-size: 0.75rem; padding: 4px 10px; pointer-events: none;">PJ Acara Grow Series 1.0</span>
+                        <span class="btn btn-secondary" style="font-size: 0.75rem; padding: 4px 10px; pointer-events: none;">Tim Acara Akar Kata 4.0</span>
                     </div>
                 </div>
             </div>
@@ -188,20 +197,6 @@
         &copy; 2026 Portofolio Hanif Baihaqi Abdurrahman
     </footer>
 
-    <script>
-        function openLightbox(src) {
-            const lb = document.getElementById('lightbox');
-            const img = document.getElementById('lightbox-img');
-            img.src = src;
-            lb.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeLightbox() {
-            const lb = document.getElementById('lightbox');
-            lb.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

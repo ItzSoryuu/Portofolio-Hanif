@@ -29,7 +29,7 @@
             margin-bottom: 15px;
             padding-left: 5px;
             border-left: 4px solid var(--one-ui-primary);
-            padding-left: 15px;
+            padding-left: 1rem;
         }
         /* Grid untuk 3 gambar per semester */
         .report-grid {
@@ -44,12 +44,13 @@
             object-fit: cover;
             border-radius: 20px;
             border: 1px solid #efeff4;
-            transition: transform 0.2s;
+            transition: transform 0.2s, box-shadow 0.15s ease-in-out;
             cursor: pointer;
         }
         .report-item img:hover {
             transform: scale(1.02);
             border-color: var(--one-ui-primary);
+            box-shadow: 0 6px 16px rgba(3, 115, 243, 0.3);
         }
         .status-badge {
             font-size: 0.75rem;
@@ -118,9 +119,11 @@
     </ul>
     </nav>
 
-    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-        <span class="close-zoom">&times;</span>
+    <div class="lightbox" id="lightbox">
+        <span class="close-zoom" onclick="closeLightbox()">&times;</span>
         <img id="lightbox-img" src="" alt="Zoomed Report">
+        <div id="zoom-badge" style="position:absolute;bottom:24px;right:24px;background:rgba(0,0,0,0.55);color:#fff;padding:5px 14px;border-radius:20px;font-size:0.85rem;font-weight:600;opacity:0;transition:opacity 0.2s;pointer-events:none;">100%</div>
+        <div id="zoom-hint" style="position:absolute;bottom:24px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.55);color:#fff;padding:6px 16px;border-radius:20px;font-size:0.8rem;opacity:0;transition:opacity 0.4s;pointer-events:none;white-space:nowrap;">Scroll untuk zoom · Klik 2x untuk zoom in</div>
     </div>
 
     <div class="container">
@@ -129,8 +132,8 @@
             <div class="grade-header">
                 <i class="fas fa-graduation-cap"></i>
                 <div>
-                    <h2 style="margin: 0;">Grade 10</h2>
-                    <span class="status-badge">Completed</span>
+                    <h2 style="margin: 0;">Kelas 10 (2024-2025)</h2>
+                    <span class="status-badge">Selesai</span>
                 </div>
             </div>
 
@@ -157,8 +160,8 @@
             <div class="grade-header">
                 <i class="fas fa-pen-nib"></i>
                 <div>
-                    <h2 style="margin: 0;">Grade 11</h2>
-                    <span class="status-badge active-badge">Current Year</span>
+                    <h2 style="margin: 0;">Kelas 11 (2025-2026)</h2>
+                    <span class="status-badge active-badge">Sekarang</span>
                 </div>
             </div>
 
@@ -174,9 +177,9 @@
             <div class="semester-section">
                 <p class="semester-title">Semester Genap</p>
                 <div class="report-grid">
-                    <div class="report-item" style="background: #f2f2f7; border-radius: 20px; aspect-ratio: 3/4; display: flex; align-items: center; justify-content: center; color: #8e8e93;">UTIWI</div>
-                    <div class="report-item" style="background: #f2f2f7; border-radius: 20px; aspect-ratio: 3/4; display: flex; align-items: center; justify-content: center; color: #8e8e93;">UTIWI</div>
-                    <div class="report-item" style="background: #f2f2f7; border-radius: 20px; aspect-ratio: 3/4; display: flex; align-items: center; justify-content: center; color: #8e8e93;">UTIWI</div>
+                    <div class="report-item" style="background: #f2f2f7; border-radius: 20px; aspect-ratio: 3/4; display: flex; align-items: center; justify-content: center; color: #8e8e93;">BELUM ADA</div>
+                    <div class="report-item" style="background: #f2f2f7; border-radius: 20px; aspect-ratio: 3/4; display: flex; align-items: center; justify-content: center; color: #8e8e93;">BELUM ADA</div>
+                    <div class="report-item" style="background: #f2f2f7; border-radius: 20px; aspect-ratio: 3/4; display: flex; align-items: center; justify-content: center; color: #8e8e93;">BELUM ADA</div>
                 </div>
             </div>
         </div>
@@ -185,11 +188,11 @@
             <div class="grade-header">
                 <i class="fas fa-university"></i>
                 <div>
-                    <h2 style="margin: 0;">Grade 12</h2>
-                    <span class="status-badge">Upcoming</span>
+                    <h2 style="margin: 0;">Kelas 12 (2026-2027)</h2>
+                    <span class="status-badge">Mendatang</span>
                 </div>
             </div>
-            <p style="text-align: center; padding: 40px; color: var(--one-ui-secondary);">MASIH KELAS 11 BANGGG</p>
+            <p style="text-align: center; padding: 40px; color: var(--one-ui-secondary);">BELUM KELAS 12</p>
         </div>
 
     </div>
