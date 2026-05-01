@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Experiences - Portofolio</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Style galeri dokumentasi */
         .doc-grid {
@@ -104,8 +104,16 @@
     <meta name="theme-color" content="#f2f2f7">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <script>
+        if (localStorage.getItem('nightMode') === 'enabled') document.documentElement.classList.add('night-mode');
+    </script>
 </head>
 <body>
+    <button class="theme-toggle" onclick="toggleNightMode()" title="Toggle Night Mode">
+        <i class="fas fa-moon icon-moon"></i>
+        <i class="fas fa-sun icon-sun"></i>
+    </button>
+
     <nav class="navbar">
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -137,7 +145,7 @@
             </div>
 
             <div class="poster-large">
-                <p style="font-weight: 600; margin-bottom: 10px;">Poster Project (Zoom Untuk Selengkapnya)</p>
+                <p style="font-weight: 600; margin-bottom: 10px;">Poster Project (Tekan Untuk Selengkapnya)</p>
                 <img src="poster-propil.jpeg" alt="Poster Besar PROPIL" onclick="openLightbox(this.src)" style="cursor: pointer;">
             </div>
         </div>

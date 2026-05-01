@@ -5,11 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <meta name="theme-color" content="#f2f2f7">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <script>
+        if (localStorage.getItem('nightMode') === 'enabled') document.documentElement.classList.add('night-mode');
+    </script>
 </head>
 <body>
+    <button class="theme-toggle" onclick="toggleNightMode()" title="Toggle Night Mode">
+        <i class="fas fa-moon icon-moon"></i>
+        <i class="fas fa-sun icon-sun"></i>
+    </button>
+
     <nav class="navbar">
     <ul>
         <li><a href="index.html">Home</a></li>
@@ -31,16 +40,16 @@
         <div class="card">
             <h3>Skills & Hobbies</h3>
             <div class="grid-container">
-                <div class="icon-box";><img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png"><p>Python</p></div>
-                <div class="icon-box";><img src="https://cdn-icons-png.flaticon.com/512/2643/2643338.png"><p>Maths</p></div>
-                <div class="icon-box";><img src="https://cdn-icons-png.flaticon.com/512/3389/3389081.png"><p>Reading</p></div>
-                <div class="icon-box";><img src="https://cdn-icons-png.flaticon.com/512/1005/1005141.png"><p>Coding</p></div>
+                <div class="icon-box"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" alt="Python" loading="lazy"><p>Python</p></div>
+                <div class="icon-box"><img src="https://cdn-icons-png.flaticon.com/512/2643/2643338.png" alt="Maths" loading="lazy"><p>Maths</p></div>
+                <div class="icon-box"><img src="https://cdn-icons-png.flaticon.com/512/3389/3389081.png" alt="Reading" loading="lazy"><p>Reading</p></div>
+                <div class="icon-box"><img src="https://cdn-icons-png.flaticon.com/512/1005/1005141.png" alt="Coding" loading="lazy"><p>Coding</p></div>
             </div>
         </div>
 
         <div class="card">
             <h3>Social Media</h3>
-            <div class="grid-container"z>
+            <div class="grid-container">
                 
                 <a href="https://www.instagram.com/hanif.q9/" target="_blank" style="text-decoration: none; color: inherit;">
                     <div class="icon-box-btn" style="border: 1px solid #e5e5ea;">
@@ -70,8 +79,10 @@
         </div>
     </div>
 
-    <footer style="text-align: center; padding: 30px; color: var(--one-ui-secondary); font-size: 0.8rem;">
+<footer style="text-align: center; padding: 30px; color: var(--one-ui-secondary); font-size: 0.8rem;">
         &copy; 2026 Portofolio Hanif Baihaqi Abdurrahman
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

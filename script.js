@@ -1,4 +1,22 @@
 // =============================================
+// NIGHT MODE TOGGLE
+// =============================================
+function initNightMode() {
+    const savedMode = localStorage.getItem('nightMode');
+    if (savedMode === 'enabled') {
+        document.documentElement.classList.add('night-mode');
+    }
+}
+
+function toggleNightMode() {
+    const root = document.documentElement;
+    root.classList.toggle('night-mode');
+    
+    const isNightMode = root.classList.contains('night-mode');
+    localStorage.setItem('nightMode', isNightMode ? 'enabled' : 'disabled');
+}
+
+// =============================================
 // LIGHTBOX STATE
 // =============================================
 let scale = 1;

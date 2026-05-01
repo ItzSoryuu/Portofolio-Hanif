@@ -5,11 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Portofolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <meta name="theme-color" content="#f2f2f7">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <script>
+        if (localStorage.getItem('nightMode') === 'enabled') document.documentElement.classList.add('night-mode');
+    </script>
 </head>
 <body>
+    <button class="theme-toggle" onclick="toggleNightMode()" title="Toggle Night Mode">
+        <i class="fas fa-moon icon-moon"></i>
+        <i class="fas fa-sun icon-sun"></i>
+    </button>
+
     <nav class="navbar">
     <ul>
         <li><a href="index.html" class="active">Home</a></li>
@@ -32,11 +41,14 @@
     <div class="container" style="margin-top: 0;">
         <div class="card" style="text-align: center; color: var(--one-ui-secondary);">
             <p style="margin: 0;">🧭 Gunakan Navigation Bar Di Atas Untuk Berpindah Halaman</p>
+            <p style="margin: 1rem 0 0 0;">⚙️ Gunakan Tombol Theme Di Pojok Kanan Atas Untuk Mengganti Tema</p>
         </div>
     </div>
 
-    <footer style="text-align: center; padding: 30px; color: var(--one-ui-secondary); font-size: 0.8rem;">
+<footer style="text-align: center; padding: 30px; color: var(--one-ui-secondary); font-size: 0.8rem;">
         &copy; 2026 Portofolio Hanif Baihaqi Abdurrahman
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

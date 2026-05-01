@@ -7,6 +7,146 @@
     --radius: 28px; /*Style One UI Samsung*/
 }
 
+/* Night / Discord Mode */
+.night-mode {
+    --one-ui-bg: #36393f;
+    --one-ui-card: #2f3136;
+    --one-ui-primary: #5865F2;
+    --one-ui-text: #dcddde;
+    --one-ui-secondary: #b9bbbe;
+    --icon-box-bg: #40444b;
+    background-color: var(--one-ui-bg);
+    color: var(--one-ui-text);
+}
+
+.night-mode .navbar {
+    background: rgba(54, 57, 63, 0.85);
+}
+
+.night-mode .navbar a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.night-mode .btn-secondary {
+    background: #4f545c;
+    color: #dcddde;
+}
+
+.night-mode .icon-box {
+    background: #40444b;
+    border: 1px solid #4f545c !important;
+}
+
+.night-mode .icon-box-btn {
+    background: #40444b;
+    border: 1px solid #4f545c !important;
+}
+
+.night-mode .status-badge {
+    background: #4f545c;
+    color: #b9bbbe;
+}
+
+.night-mode .badge-title {
+    background: #5865F2;
+}
+
+.night-mode .report-item img {
+    border-color: #4f545c !important;
+    background: #ffffff !important;
+}
+
+.night-mode .report-item:has(img) {
+    background: transparent !important;
+}
+
+.night-mode .report-item:not(:has(img)) {
+    background: #40444b !important;
+    color: #dcddde !important;
+}
+
+.night-mode .card[style*="background: #f8f9ff"],
+.night-mode [style*="background: #f8f9ff"].card {
+    background: #2f3136 !important;
+}
+
+.night-mode ul.custom-list li {
+    color: #dcddde;
+}
+
+/* Night mode text adjustments */
+.night-mode h1, 
+.night-mode h2, 
+.night-mode h3, 
+.night-mode h4 {
+    color: #ffffff;
+}
+
+.night-mode .card p,
+.night-mode p {
+    color: #dcddde !important;
+}
+
+.night-mode .icon-box p,
+.night-mode .icon-box-btn p {
+    color: #dcddde;
+}
+
+.night-mode small {
+    color: #b9bbbe;
+}
+/* Night Mode Toggle Switch */
+.theme-toggle {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    z-index: 1001;
+    background: var(--one-ui-card);
+    border: none;
+    border-radius: 20px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.05);
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
+}
+
+.night-mode .theme-toggle {
+    background: #4f545c;
+}
+
+.theme-toggle .icon-sun,
+.theme-toggle .icon-moon {
+    font-size: 0.9rem;
+}
+
+.night-mode .theme-toggle .icon-sun {
+    display: inline;
+}
+
+.night-mode .theme-toggle .icon-moon {
+    display: none;
+}
+
+:not(.night-mode) .theme-toggle .icon-sun {
+    display: none;
+}
+
+:not(.night-mode) .theme-toggle .icon-moon {
+    display: inline;
+}
+
 html {
     scroll-behavior: smooth;
 }
