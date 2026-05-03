@@ -131,19 +131,21 @@
     font-size: 0.9rem;
 }
 
-.night-mode .theme-toggle .icon-sun {
+/*Icon Matahari saat Normal Mode*/
+.theme-toggle .icon-sun {
     display: inline;
 }
 
+.theme-toggle .icon-moon {
+    display: none;
+}
+
+/*Icon Bulan saat Dark Mode*/
+.night-mode .theme-toggle .icon-sun {
+    display: none;
+}
+
 .night-mode .theme-toggle .icon-moon {
-    display: none;
-}
-
-:not(.night-mode) .theme-toggle .icon-sun {
-    display: none;
-}
-
-:not(.night-mode) .theme-toggle .icon-moon {
     display: inline;
 }
 
