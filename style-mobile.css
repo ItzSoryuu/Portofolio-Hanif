@@ -1,0 +1,62 @@
+/* --- PENGATURAN KHUSUS MOBILE --- */
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    margin-top: 80px; 
+    padding: 0 15px;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Grid otomatis yang lebih pas untuk HP */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.doc-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px;
+}
+
+.icon-box {
+    grid-column: span 1 !important; 
+    width: 100% !important;
+    text-align: center;
+}
+
+.report-grid {
+    grid-template-columns: repeat(2, 1fr); 
+}
+
+.hero h1 {
+    font-size: 1.8rem;
+}
+
+/* Navbar Scroll Horizontal */
+.navbar {
+    padding: 2px 0; /* Mengurangi padding luar agar tinggi navbar tetap proporsional */
+}
+
+.navbar ul {
+    justify-content: flex-start;
+    padding: 12px 20px; /* Menambah padding atas-bawah agar efek shadow & rounded tombol active tidak terpotong */
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scrollbar-width: none; /* Firefox */
+    -webkit-overflow-scrolling: touch; /* Momentum scrolling untuk iOS */
+    touch-action: pan-x; /* Optimasi fokus hanya pada geseran horizontal */
+}
+
+.navbar ul::-webkit-scrollbar {
+    display: none;
+}
+
+.navbar li {
+    flex-shrink: 0;
+}

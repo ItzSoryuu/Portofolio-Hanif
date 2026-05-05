@@ -1,13 +1,15 @@
 :root {
+    /* Variabel warna utama untuk Light Mode */
     --one-ui-bg: #f2f2f7;
     --one-ui-card: #ffffff;
     --one-ui-primary: #0373f3;
     --one-ui-text: #000000;
     --one-ui-secondary: #8e8e93;
+    --icon-box-bg: #f9f9fb;
     --radius: 28px; /*Style One UI Samsung*/
 }
 
-/* Night / Discord Mode */
+/* Override warna untuk Night / Discord Mode */
 .night-mode {
     --one-ui-bg: #36393f;
     --one-ui-card: #2f3136;
@@ -19,26 +21,29 @@
     color: var(--one-ui-text);
 }
 
+/* Transparansi Navbar pada Mode Malam */
 .night-mode .navbar {
     background: rgba(54, 57, 63, 0.85);
 }
 
+/* Hover link navbar pada Mode Malam */
 .night-mode .navbar a:hover {
     background: rgba(255, 255, 255, 0.1);
 }
 
+/* Tombol sekunder pada Mode Malam */
 .night-mode .btn-secondary {
     background: #4f545c;
     color: #dcddde;
 }
 
 .night-mode .icon-box {
-    background: #40444b;
+    background: var(--icon-box-bg);
     border: 1px solid #4f545c !important;
 }
 
 .night-mode .icon-box-btn {
-    background: #40444b;
+    background: var(--icon-box-bg);
     border: 1px solid #4f545c !important;
 }
 
@@ -47,10 +52,12 @@
     color: #b9bbbe;
 }
 
+/* Badge judul kecil */
 .night-mode .badge-title {
     background: #5865F2;
 }
 
+/* Penyesuaian gambar laporan/sertifikat agar tetap kontras */
 .night-mode .report-item img {
     border-color: #4f545c !important;
     background: #ffffff !important;
@@ -65,16 +72,18 @@
     color: #dcddde !important;
 }
 
+/* Penyesuaian background khusus untuk elemen yang menggunakan inline style biru muda */
 .night-mode .card[style*="background: #f8f9ff"],
 .night-mode [style*="background: #f8f9ff"].card {
     background: #2f3136 !important;
 }
 
+/* List kustom pada Mode Malam */
 .night-mode ul.custom-list li {
     color: #dcddde;
 }
 
-/* Night mode text adjustments */
+/* Penyesuaian warna teks heading agar lebih terang di Mode Malam */
 .night-mode h1, 
 .night-mode h2, 
 .night-mode h3, 
@@ -82,6 +91,7 @@
     color: #ffffff;
 }
 
+/* Warna teks paragraf di Mode Malam */
 .night-mode .card p,
 .night-mode p {
     color: #dcddde !important;
@@ -95,7 +105,8 @@
 .night-mode small {
     color: #b9bbbe;
 }
-/* Night Mode Toggle Switch */
+
+/* Desain Tombol Floating untuk Ganti Tema */
 .theme-toggle {
     position: fixed;
     top: 15px;
@@ -114,6 +125,7 @@
     transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
+/* Efek tekan dan hover pada tombol tema */
 .theme-toggle:hover {
     transform: scale(1.05);
 }
@@ -131,28 +143,26 @@
     font-size: 0.9rem;
 }
 
-/*Icon Matahari saat Normal Mode*/
+/* Logika penggantian icon (Matahari/Bulan) */
 .theme-toggle .icon-sun {
     display: inline;
 }
-
 .theme-toggle .icon-moon {
     display: none;
 }
-
-/*Icon Bulan saat Dark Mode*/
 .night-mode .theme-toggle .icon-sun {
     display: none;
 }
-
 .night-mode .theme-toggle .icon-moon {
     display: inline;
 }
 
+/* Pengaturan scroll halus untuk anchor links */
 html {
     scroll-behavior: smooth;
 }
 
+/* Pengaturan dasar body (Font dan Jarak) */
 body {
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     background-color: var(--one-ui-bg);
@@ -163,11 +173,12 @@ body {
     width: 100%;
 }
 
+/* Menyembunyikan scrollbar utama agar tampilan lebih clean */
 body::-webkit-scrollbar {
     display: none;
 }
 
-/* Navbar modern */
+/* Navigasi atas dengan efek blur (Glassmorphism) */
 .navbar {
     background: rgba(242, 242, 247, 0.8);
     backdrop-filter: blur(20px);
@@ -178,15 +189,17 @@ body::-webkit-scrollbar {
     padding: 15px 0;
 }
 
+/* List di dalam navbar */
 .navbar ul {
     list-style: none;
     display: flex;
-    justify-content: center; /* Tetap center di laptop */
+    justify-content: center;
     gap: 20px;
     margin: 0;
     padding: 0;
 }
 
+/* Link di dalam navbar */
 .navbar a {
     text-decoration: none;
     color: var(--one-ui-text);
@@ -197,17 +210,19 @@ body::-webkit-scrollbar {
     transition: 0.3s;
 }
 
+/* Efek hover pada menu navbar */
 .navbar a:hover {
     background: rgba(0, 0, 0, 0.05);
 }
 
-/* Khusus container & cards */
+/* Pembungkus konten utama */
 .container {
     max-width: 900px;
     margin: 100px auto 20px auto;
     padding: 0 20px;
 }
 
+/* Desain kartu (Card) ala One UI */
 .card {
     background: var(--one-ui-card);
     border-radius: var(--radius);
@@ -221,6 +236,7 @@ h1, h2, h3 {
     margin-top: 0;
 }
 
+/* Foto profil bulat */
 .profile-img {
     width: 150px;
     height: 150px;
@@ -229,7 +245,7 @@ h1, h2, h3 {
     margin-bottom: 20px;
 }
 
-/* Grid khusus skill & hobi */
+/* Sistem grid otomatis untuk bagian Skill & Hobi */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -237,8 +253,9 @@ h1, h2, h3 {
     margin-top: 20px;
 }
 
+/* Kotak ikon skill */
 .icon-box {
-    background: #f9f9fb;
+    background: var(--icon-box-bg);
     padding: 20px;
     border-radius: var(--radius);
     text-align: center;
@@ -255,14 +272,14 @@ h1, h2, h3 {
     margin-bottom: 10px;
 }
 
-/* Buat tombol */
+/* Kotak yang berfungsi sebagai tombol (Social Media) */
 .icon-box-btn {
-    background: #f9f9fb;
+    background: var(--icon-box-bg);
     padding: 20px;
     border-radius: var(--radius);
     text-align: center;
     transition: transform 0.2s, box-shadow 0.15s ease-in-out;
-}
+}   
 
 .icon-box-btn img {
     width: 40px;
@@ -270,12 +287,14 @@ h1, h2, h3 {
     margin-bottom: 10px;
 }
 
+/* Pembungkus kumpulan tombol */
 .btn-group {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
 }
 
+/* Desain Tombol Standar */
 .btn {
     background: var(--one-ui-primary);
     color: white;
@@ -287,45 +306,44 @@ h1, h2, h3 {
     border: none;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
 .btn:hover, .icon-box-btn:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 16px rgba(3, 115, 243, 0.3);
 }
-
 .btn:active, .icon-box-btn:active, .doc-item:active {
     transform: scale(0.95);
     transition: transform 0.1s;
 }
 
+/* Tombol dengan warna abu-abu */
 .btn-secondary {
     background: #e5e5ea;
     color: #000;
 }
 
-/* Style buat list */
+/* List kustom dengan jarak antar item */
 ul.custom-list {
     padding-left: 20px;
 }
-
 ul.custom-list li {
     margin-bottom: 10px;
     color: #3a3a3c;
 }
 
-/* Style buat highlight navbar aktif*/
+/* Highlight untuk halaman yang sedang aktif di Navbar */
 .navbar a.active {
     background: var(--one-ui-primary);
     color: white;
     box-shadow: 0 4px 10px rgba(3, 115, 243, 0.3);
 }
 
+/* Pengaturan interaksi global (Mencegah highlight biru di mobile) */
 * {
-    -webkit-tap-highlight-color: transparent; /* Hapus kotak biru saat klik di HP */
-    user-select: none; /* Mencegah teks terpilih secara tidak sengaja */
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
 }
 
-/* Tapi izinkan teks di dalam card tetap bisa dipilih agar user bisa copy kontak */
+/* Mengizinkan teks penting (kontak/isi) tetap bisa di-copy/pilih */
 .card p, .card h1, .card h2, .card h3 {
     user-select: text;
 }
@@ -333,52 +351,5 @@ ul.custom-list li {
 img {
     max-width: 100%;
     height: auto;
-    border-radius: 15px; /* Biar tetap senada dengan tema One UI */
-}
-
-/* --- RESPONSIVE MOBILE SETTINGS --- */
-@media (max-width: 600px) {
-    * {
-        box-sizing: border-box; /* Memastikan padding tidak menambah lebar elemen */
-    }
-
-    .container {
-        margin-top: 80px; 
-        padding: 0 15px;
-        width: 100%;
-        overflow-x: hidden; /* Tambahan agar container tidak meluber */
-    }
-
-    /* Memperbaiki Grid Ikon/Box yang error di screenshot */
-    .grid-container {
-        grid-template-columns: 1fr !important; /* Paksa jadi 1 kolom agar tidak sempit */
-        gap: 12px;
-    }
-
-    /* Memperbaiki Galeri Dokumentasi di Experience */
-    .doc-grid {
-        grid-template-columns: repeat(2, 1fr) !important; /* Maksimal 2 kolom di HP */
-        gap: 8px;
-    }
-
-    /* Menghapus paksaan lebar dari inline style HTML */
-    .icon-box {
-        grid-column: span 1 !important; 
-        width: 100% !important;
-        text-align: left; /* Opsional: lebih rapi di HP kalau rata kiri */
-    }
-
-    .report-grid {
-        grid-template-columns: repeat(2, 1fr); 
-    }
-
-    .hero h1 {
-        font-size: 1.8rem;
-    }
-
-    .navbar ul {
-        justify-content: flex-start;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
+    border-radius: 15px;
 }

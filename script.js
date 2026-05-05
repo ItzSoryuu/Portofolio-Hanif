@@ -314,6 +314,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // Backdrop close
     lightbox.addEventListener('click', handleLightboxClick);
 
+    // Jalankan pengecekan tema saat awal load
+    initNightMode();
+
     // Prevent image drag messing with pan
     img.addEventListener('dragstart', e => e.preventDefault());
 });
