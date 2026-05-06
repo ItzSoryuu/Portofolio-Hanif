@@ -44,7 +44,7 @@
             aspect-ratio: 3/4; /* Proporsi kertas rapot */
             object-fit: cover;
             border-radius: 20px;
-            border: 1px solid #efeff4;
+            border: 1px solid var(--one-ui-secondary);
             transition: transform 0.2s, box-shadow 0.15s ease-in-out;
             cursor: pointer;
         }
@@ -103,9 +103,47 @@
             cursor: pointer;
         }
 
-        /* Responsive: di HP jadi 1 atau 2 kolom agar tidak terlalu kecil */
-        @media (max-width: 600px) {
-            .report-grid { grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 600px) {
+        /* Layout 1 baris 3 kolom */
+        .report-grid { 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 8px; 
+        }
+
+        /* Pastikan report-item (pembungkus) tidak punya sisa border putih */
+        .report-item {
+            background: transparent !important;
+            border: none !important;
+        }
+
+        /* Target khusus untuk box "BELUM ADA" agar warnanya muncul lagi */
+        .report-item[style*="background"], 
+        .report-item div[style*="background"] {
+            background-color: #f2f2f7 !important; /* Warna abu terang OneUI */
+            border-radius: 12px !important;
+            width: 100% !important;
+            aspect-ratio: 3/4;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.5rem; /* Perkecil teks agar muat di kolom sempit */
+            color: #8e8e93 !important;
+        }
+
+        /* Gambar rapot tetap bersih tanpa border putih */
+        .report-item img {
+            width: 100%;
+            border: none !important;
+            border-radius: 12px;
+            display: block;
+        }
+    }
+
+        /* Pastikan saat Night Mode, background-nya menyesuaikan (Opsional) */
+        .night-mode .report-item[style*="background"],
+        .night-mode .report-item div[style*="background"] {
+            background-color: #2c2c2e !important; /* Warna gelap sesuai tema Discord/OneUI */
+            color: #8e8e93 !important;
         }
     </style>
     <meta name="theme-color" content="#f2f2f7">
@@ -190,9 +228,9 @@
             <div class="semester-section">
                 <p class="semester-title">Semester Genap</p>
                 <div class="report-grid">
-                    <div class="report-item" style="background: #f2f2f7; border-radius: 20px; aspect-ratio: 3/4; display: flex; align-items: center; justify-content: center; color: #8e8e93;">BELUM ADA</div>
-                    <div class="report-item" style="background: #f2f2f7; border-radius: 20px; aspect-ratio: 3/4; display: flex; align-items: center; justify-content: center; color: #8e8e93;">BELUM ADA</div>
-                    <div class="report-item" style="background: #f2f2f7; border-radius: 20px; aspect-ratio: 3/4; display: flex; align-items: center; justify-content: center; color: #8e8e93;">BELUM ADA</div>
+                    <div class="report-item" style="background: #f2f2f7; border-radius: 20px; aspect-ratio: 3/4; display: flex; align-items: center; justify-content: center; color: #8e8e93;">SOON</div>
+                    <div class="report-item" style="background: #f2f2f7; border-radius: 20px; aspect-ratio: 3/4; display: flex; align-items: center; justify-content: center; color: #8e8e93;">SOON</div>
+                    <div class="report-item" style="background: #f2f2f7; border-radius: 20px; aspect-ratio: 3/4; display: flex; align-items: center; justify-content: center; color: #8e8e93;">SOON</div>
                 </div>
             </div>
         </div>
