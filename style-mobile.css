@@ -63,7 +63,7 @@
 
 .theme-toggle {
     position: fixed;
-    top: 45px;
+    top: 50px;
     right: 20px;
     z-index: 1001;
     background: var(--one-ui-card);
