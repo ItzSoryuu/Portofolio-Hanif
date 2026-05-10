@@ -31,6 +31,12 @@
     background: rgba(255, 255, 255, 0.1);
 }
 
+.night-mode .navbar a.active {
+    background: var(--one-ui-primary);
+    color: white;
+    box-shadow: 0 4px 10px rgba(3, 115, 243, 0.3);
+}
+
 /* Tombol sekunder pada Mode Malam */
 .night-mode .btn-secondary {
     background: #4f545c;
@@ -178,6 +184,12 @@ body::-webkit-scrollbar {
     display: none;
 }
 
+/* Pengaturan interaksi global (Mencegah highlight biru di mobile) */
+* {
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
 /* Navigasi atas dengan efek blur (Glassmorphism) */
 .navbar {
     background: rgba(242, 242, 247, 0.8);
@@ -213,6 +225,13 @@ body::-webkit-scrollbar {
 /* Efek hover pada menu navbar */
 .navbar a:hover {
     background: rgba(0, 0, 0, 0.05);
+}
+
+/* Highlight untuk halaman yang sedang aktif di Navbar */
+.navbar a.active {
+    background: var(--one-ui-primary);
+    color: white;
+    box-shadow: 0 4px 10px rgba(3, 115, 243, 0.3);
 }
 
 /* Pembungkus konten utama */
@@ -328,19 +347,6 @@ ul.custom-list {
 ul.custom-list li {
     margin-bottom: 10px;
     color: #3a3a3c;
-}
-
-/* Highlight untuk halaman yang sedang aktif di Navbar */
-.navbar a.active {
-    background: var(--one-ui-primary);
-    color: white;
-    box-shadow: 0 4px 10px rgba(3, 115, 243, 0.3);
-}
-
-/* Pengaturan interaksi global (Mencegah highlight biru di mobile) */
-* {
-    -webkit-tap-highlight-color: transparent;
-    user-select: none;
 }
 
 /* Mengizinkan teks penting (kontak/isi) tetap bisa di-copy/pilih */
