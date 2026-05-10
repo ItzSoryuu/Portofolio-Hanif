@@ -1,4 +1,10 @@
 /* --- PENGATURAN KHUSUS MOBILE --- */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -43,14 +49,14 @@
 }
 
 .navbar ul {
+    display: flex; /* Tambahkan ini agar li berjejer horizontal */
+    align-items: center;
     justify-content: flex-start;
-    padding: 12px 20px; /* Menambah padding atas-bawah agar efek shadow & rounded tombol active tidak terpotong */
+    padding: 12px 20px;
     overflow-x: auto;
-    overflow-y: hidden;
     white-space: nowrap;
-    scrollbar-width: none; /* Firefox */
-    -webkit-overflow-scrolling: touch; /* Momentum scrolling untuk iOS */
-    touch-action: pan-x; /* Optimasi fokus hanya pada geseran horizontal */
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
 }
 
 .navbar ul::-webkit-scrollbar {
@@ -65,11 +71,13 @@
     position: fixed;
     top: 50px;
     right: 20px;
+    width: 48px;
+    height: 40px;
     z-index: 1001;
     background: var(--one-ui-card);
     border: none;
-    border-radius: 20px;
-    padding: 8px 12px;
+    border-radius: 40px;
+    padding: 12px 20px;
     cursor: pointer;
     font-size: 1.1rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
@@ -77,4 +85,5 @@
     align-items: center;
     gap: 6px;
     transition: transform 0.2s ease, background-color 0.3s ease;
+    justify-content: center;
 }
